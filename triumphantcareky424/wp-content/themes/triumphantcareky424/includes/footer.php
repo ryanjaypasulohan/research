@@ -126,81 +126,60 @@ Solved HTML5 & CSS IE Issues
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
   <script>
-//     gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-//     const sections = document.querySelectorAll(".section");
+  const sections = document.querySelectorAll(".section");
+  const wrapper = document.querySelector(".horizontal-wrapper");
 
-//     // Horizontal scroll
-//     gsap.to(".horizontal-wrapper", {
-//       xPercent: -100 * (sections.length - 1),
-//       ease: "none",
-//       scrollTrigger: {
-//         trigger: ".scroll-container",
-//         pin: true,
-//         scrub: 2,
-// end: () => "+=" + document.querySelector(".horizontal-wrapper").offsetWidth * 1.5
+  // Calculate total scrollable width dynamically
+  const totalScrollWidth = wrapper.scrollWidth - window.innerWidth;
 
-//       }
-//     });
-
-gsap.registerPlugin(ScrollTrigger);
-
-const sections = document.querySelectorAll(".section");
-const wrapper = document.querySelector(".horizontal-wrapper");
-
-// Get total scrollable width
-const totalScrollWidth = wrapper.scrollWidth - window.innerWidth;
-
-// Apply horizontal scroll animation
-gsap.to(wrapper, {
-  x: () => -totalScrollWidth, // scroll to the end dynamically
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".scroll-container",
-    pin: true,
-    scrub: 1,
-    end: () => "+=" + totalScrollWidth
-  }
-});
-
-
-// Sprite animation
-const sprite = document.getElementById("sprite");
-    const frameWidth = 100;
-    const frameHeight = 150;
-    const columns = 4;
-    const rows = 2;
-    const totalFrames = columns * rows;
-    let currentFrame = 0;
-    let isScrolling = false;
-
-    function updateFrame() {
-      currentFrame = (currentFrame + 1) % totalFrames;
-      const col = currentFrame % columns;
-      const row = Math.floor(currentFrame / columns);
-      const x = -col * frameWidth;
-      const y = -row * frameHeight;
-      sprite.style.backgroundPosition = `${x}px ${y}px`;
+  // Horizontal scrolling
+  gsap.to(wrapper, {
+    x: () => -totalScrollWidth,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".scroll-container",
+      pin: true,
+      scrub: 1,
+      end: () => "+=" + totalScrollWidth
     }
+  });
 
-    let scrollInterval;
-    window.addEventListener("scroll", () => {
-      isScrolling = true;
-      if (!scrollInterval) {
-        scrollInterval = setInterval(() => {
-          if (isScrolling) {
-            updateFrame();
-            isScrolling = false;
-          } else {
-            clearInterval(scrollInterval);
-            scrollInterval = null;
-          }
-        }, 100); // adjust speed if needed
-      }
-    });
+  // Sprite animation config (6 frames, 1 row)
+  const sprite = document.getElementById("sprite");
+  const frameWidth = 75.6;
+  const frameHeight = 71.7;
+  const totalFrames = 6;
+  let currentFrame = 0;
+  let isScrolling = false;
 
-  </script>
+  function updateFrame() {
+    currentFrame = (currentFrame + 1) % totalFrames;
+    const x = -currentFrame * frameWidth;
+    sprite.style.backgroundPosition = `${x}px 0px`;
+  }
+
+  let scrollInterval;
+
+  window.addEventListener("scroll", () => {
+    isScrolling = true;
+    if (!scrollInterval) {
+      scrollInterval = setInterval(() => {
+        if (isScrolling) {
+          updateFrame();
+          isScrolling = false;
+        } else {
+          clearInterval(scrollInterval);
+          scrollInterval = null;
+        }
+      }, 100); // Adjust this to speed up or slow down the frame rate
+    }
+  });
+</script>
+
 
 <?php wp_footer(); ?>
 

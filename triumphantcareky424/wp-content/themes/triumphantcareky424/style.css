@@ -1074,18 +1074,18 @@ a, a span{text-decoration: none;-webkit-transition: all .3s linear;transition: a
 
   .character-wrapper {
     position: fixed;
-    bottom: 40px;
+    bottom: 0px;
     left: 50px;
-    width: 100px;   /* width of one frame */
-    height: 150px;  /* height of one frame */
+    width: 71.6px;
+    height: 71.7px;
     overflow: hidden;
     z-index: 999;
   }
 
   .sprite {
-    width: 400px;   /* full width of the sprite sheet */
-    height: 300px;  /* full height of the sprite sheet */
-    background: url('https://i.snipboard.io/v6JNLl.jpg') left top no-repeat;
+    width: 71.6px;
+    height: 71.7px;
+    background: url('/research/triumphantcareky424/wp-content/themes/triumphantcareky424/images/sprite-run.png') left top no-repeat;
     position: absolute;
     top: 0;
     left: 0;
