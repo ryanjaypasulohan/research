@@ -125,18 +125,31 @@ Solved HTML5 & CSS IE Issues
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
-  <script>
+<script>
   gsap.registerPlugin(ScrollTrigger);
 
   const sections = document.querySelectorAll(".section");
   const wrapper = document.querySelector(".horizontal-wrapper");
+  const character = document.querySelector(".character-wrapper");
+  const sprite = document.getElementById("sprite");
 
-  // Calculate total scrollable width dynamically
+  // Sprite configuration
+  const frameWidth = 170.74;
+  const frameHeight = 231.7;
+  const columns = 5;
+  const rows = 2;
+  const totalFrames = columns * rows;
+  let currentFrame = 0;
+
+  // Track scroll direction
+  let lastScroll = window.scrollY;
+
+  // Total scrollable width
   const totalScrollWidth = wrapper.scrollWidth - window.innerWidth;
 
-  // Horizontal scrolling
+  // Animate horizontal scrolling
   gsap.to(wrapper, {
     x: () => -totalScrollWidth,
     ease: "none",
@@ -144,25 +157,37 @@ Solved HTML5 & CSS IE Issues
       trigger: ".scroll-container",
       pin: true,
       scrub: 1,
-      end: () => "+=" + totalScrollWidth
+      end: () => "+=" + totalScrollWidth,
+      onUpdate: (self) => {
+        const progress = self.progress; // 0 to 1
+        const maxX = window.innerWidth - frameWidth - 50; // stay within screen
+        const x = progress * maxX;
+        character.style.left = `${x}px`;
+
+        // Direction flip
+        const currentScroll = window.scrollY;
+        if (currentScroll > lastScroll) {
+          sprite.style.transform = "scaleX(1)"; // facing right
+        } else if (currentScroll < lastScroll) {
+          sprite.style.transform = "scaleX(-1)"; // facing left
+        }
+        lastScroll = currentScroll;
+      }
     }
   });
 
-  // Sprite animation config (6 frames, 1 row)
-  const sprite = document.getElementById("sprite");
-  const frameWidth = 75.6;
-  const frameHeight = 71.7;
-  const totalFrames = 6;
-  let currentFrame = 0;
+  // Sprite frame animation on scroll
   let isScrolling = false;
+  let scrollInterval;
 
   function updateFrame() {
     currentFrame = (currentFrame + 1) % totalFrames;
-    const x = -currentFrame * frameWidth;
-    sprite.style.backgroundPosition = `${x}px 0px`;
+    const col = currentFrame % columns;
+    const row = Math.floor(currentFrame / columns);
+    const x = -col * frameWidth;
+    const y = -row * frameHeight;
+    sprite.style.backgroundPosition = `${x}px ${y}px`;
   }
-
-  let scrollInterval;
 
   window.addEventListener("scroll", () => {
     isScrolling = true;
@@ -175,10 +200,16 @@ Solved HTML5 & CSS IE Issues
           clearInterval(scrollInterval);
           scrollInterval = null;
         }
-      }, 100); // Adjust this to speed up or slow down the frame rate
+      }, 80); // adjust to make running faster/slower
     }
   });
 </script>
+
+
+
+
+
+
 
 
 <?php wp_footer(); ?>

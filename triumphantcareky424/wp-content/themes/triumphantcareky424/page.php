@@ -11,7 +11,7 @@
     <div class="horizontal-wrapper">
 
         <!-- Section 1: Top Includes -->
-        <div class="section">
+        <div class="section first_section">
             <?php 
                 // get_includes('head');
                 get_includes('header');

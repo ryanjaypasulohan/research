@@ -43,7 +43,7 @@ error_reporting(0);
 
 /** The name of the database for WordPress */
 
-define( 'DB_NAME', 'triumphantcareso_Dbname23' );
+define( 'DB_NAME', 'research_triumph' );
 
 
 

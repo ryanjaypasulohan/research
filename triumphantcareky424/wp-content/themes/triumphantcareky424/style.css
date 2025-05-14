@@ -1045,7 +1045,7 @@ a, a span{text-decoration: none;-webkit-transition: all .3s linear;transition: a
 
 
 
-
+/*Horizontal scrolling with sprite css*/
 .scroll-container {
     height: 100vh;
     overflow: hidden;
@@ -1066,29 +1066,31 @@ a, a span{text-decoration: none;-webkit-transition: all .3s linear;transition: a
     /* display: flex; */
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
     background: #f0f0f0;
     /* border-right: 1px solid #ccc; */
     padding: 50px 0;
   }
 
+.first_section{ -webkit-mask-image: linear-gradient(to right, #fff 80%, transparent 100%); mask-image: linear-gradient(to right, #fff 80%, transparent 100%); }
+
   .character-wrapper {
     position: fixed;
     bottom: 0px;
     left: 50px;
-    width: 71.6px;
-    height: 71.7px;
+width: 170.74px;
+  height: 231.7px;
     overflow: hidden;
     z-index: 999;
   }
 
   .sprite {
-    width: 71.6px;
-    height: 71.7px;
+    width: 170.74px;
+  height: 231.7px;
     background: url('/research/triumphantcareky424/wp-content/themes/triumphantcareky424/images/sprite-run.png') left top no-repeat;
     position: absolute;
     top: 0;
     left: 0;
+     transition: transform 0.1s linear;
   }
 
 
