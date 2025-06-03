@@ -62,7 +62,7 @@
 
              <span>&bull;</span><q></q>
 
-             Designed by <a href="https://www.proweaver.com/" target="_blank" rel="nofollow">Proweaver</a>
+             Designed by Proweaver
 
           </div>
 
@@ -77,8 +77,6 @@
     </div>
 
   </footer>
-
-  </div>
 
 
 
@@ -120,65 +118,13 @@ Solved HTML5 & CSS IE Issues
 
 <script src="<?php bloginfo('template_url');?>/js/responsiveslides.min.js"></script>
 
-<script src="<?php bloginfo('template_url');?>/js/plugins.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/plugins.min.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/sprite-animation.js"></script>
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
-  <script>
-  gsap.registerPlugin(ScrollTrigger);
-
-  const sections = document.querySelectorAll(".section");
-  const wrapper = document.querySelector(".horizontal-wrapper");
-
-  // Calculate total scrollable width dynamically
-  const totalScrollWidth = wrapper.scrollWidth - window.innerWidth;
-
-  // Horizontal scrolling
-  gsap.to(wrapper, {
-    x: () => -totalScrollWidth,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".scroll-container",
-      pin: true,
-      scrub: 1,
-      end: () => "+=" + totalScrollWidth
-    }
-  });
-
-  // Sprite animation config (6 frames, 1 row)
-  const sprite = document.getElementById("sprite");
-  const frameWidth = 75.6;
-  const frameHeight = 71.7;
-  const totalFrames = 6;
-  let currentFrame = 0;
-  let isScrolling = false;
-
-  function updateFrame() {
-    currentFrame = (currentFrame + 1) % totalFrames;
-    const x = -currentFrame * frameWidth;
-    sprite.style.backgroundPosition = `${x}px 0px`;
-  }
-
-  let scrollInterval;
-
-  window.addEventListener("scroll", () => {
-    isScrolling = true;
-    if (!scrollInterval) {
-      scrollInterval = setInterval(() => {
-        if (isScrolling) {
-          updateFrame();
-          isScrolling = false;
-        } else {
-          clearInterval(scrollInterval);
-          scrollInterval = null;
-        }
-      }, 100); // Adjust this to speed up or slow down the frame rate
-    }
-  });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 
 <?php wp_footer(); ?>

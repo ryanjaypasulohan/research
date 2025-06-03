@@ -985,7 +985,7 @@ $defaultPage = get_page_by_title( 'Sample Page' );
 if ($defaultPage)
 wp_delete_post( $defaultPage->ID, $bypass_trash = true );
 
-$defaultPage1 = get_page_by_title( 'Privacy Policy' );
+// $defaultPage1 = get_page_by_title( 'Privacy Policy' );
 if ($defaultPage1)
 wp_delete_post( $defaultPage1->ID, $bypass_trash = true );
 
@@ -1154,3 +1154,13 @@ function get_excerpt( $count ) {
  */
 
 /** End Blog Activation **/
+
+/**Gsap Scroll Animation */
+// function enqueue_gsap_assets() {
+//     wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], null, true);
+//     wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', ['gsap'], null, true);
+//     wp_enqueue_script('sprite-animation', get_template_directory_uri() . '/js/sprite-animation.js', ['gsap', 'gsap-scrolltrigger'], null, true);
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_gsap_assets');
+
+

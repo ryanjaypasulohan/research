@@ -1,0 +1,20 @@
+#sprite-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 121.5px;  
+    height: 138.2px; 
+    overflow: hidden; 
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  #sprite {
+    width: 607.7px;    
+    height: 277.1px;   
+    background-image: url('/research/triumphantcareky424/wp-content/themes/triumphantcareky424/images/sprite/butterfly-flying.png');
+
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+  

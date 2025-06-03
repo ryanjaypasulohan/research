@@ -140,7 +140,7 @@ and (max-width : 1400px) {
 
 .copyright { left: 305px; }
 
-
+.footer_nav ul li {  margin: 0 27px;}
 
 }
 
@@ -408,7 +408,7 @@ and (max-width : 1100px) {
 
 /*Footer Area*/
 
-.footer_nav ul li { margin: 0 53px; }
+.footer_nav ul li { margin: 0 17px; }
 
 
 

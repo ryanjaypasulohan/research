@@ -131,7 +131,7 @@ $(document).ready(function () {
     } else {
       $(".main_logo").insertBefore(".header_info");
 
-      // $("#nav_area").insertBefore("header");
+      $("#nav_area").insertBefore("header");
     }
   }
 

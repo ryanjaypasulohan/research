@@ -24,7 +24,7 @@
 
   <link rel="icon" href="<?php bloginfo('template_url');?>/images/favicon.png" />
 
-  <link rel="stylesheet" href="<?php bloginfo('template_url');?>/style.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_url');?>/style.min.css">
 
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/media.min.css">
 
@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/animations.min.css">
 
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/skitter.styles.min.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/sprite.css">
 
 
 
@@ -155,7 +156,8 @@
 </head>
 
 <body>
-
   <div class="protect-me">
-
     <div class="clearfix">
+    <div id="sprite-container">
+  <div id="sprite"></div>
+</div>

@@ -200,7 +200,7 @@ if(isset($_POST['submit_info'])){
 
 
 <!-- Bottom -->
-<div class="section">
+
 <div id="bottom1">
 
     <div class="wrapper animatedParent animateOnce">
@@ -238,9 +238,9 @@ if(isset($_POST['submit_info'])){
     </div>
 
 </div>
-</div>
 
-<div class="section bottom2-3">
+
+
 <div id="bottom2">
 
     <div class="wrapper animatedParent animateOnce">
@@ -334,10 +334,9 @@ if(isset($_POST['submit_info'])){
     </div>
 
 </div>
-</div>
 
 
-<div class="section">
+
 <div id="bottom4">
 
     <div class="wrapper animatedParent animateOnce">
