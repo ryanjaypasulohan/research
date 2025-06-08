@@ -1,6 +1,6 @@
 <?php
 //In commenting exit code, leave the following comment "REMOVED - REQUESTED BY CLIENT" or "REMOVED - REQUESTED BY AGENT"
-exit();
+// exit();
 /**
  * WordPress User Page
  *

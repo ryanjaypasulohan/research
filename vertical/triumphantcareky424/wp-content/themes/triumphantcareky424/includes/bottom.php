@@ -239,34 +239,7 @@ if(isset($_POST['submit_info'])){
 
 </div>
 
-<div class="bottom_meme">
-	<div class="wrapper animatedParent animateOnce">
 
-		<!-- <section class="zoom-section">
-			<div class="zoom-wrapper">
-				<figure><img src="< ?php bloginfo('template_url');?>/images/memes/jonathan-smiling.jpg" alt="jonathan"/></figure>
-			</div>
-		</section> -->
-
-		<section class="zoom-section">
-			<img
-			src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80"
-			alt="Zoom Image"
-			class="zoom-image"
-			/>
-  		</section>
-
-		<section class="zoom-section">
-			<img
-			src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80"
-			alt="Zoom Image"
-			class="zoom-image"
-			/>
-  		</section>
-
-
-	</div>
-</div>
 
 <div id="bottom2">
 
@@ -274,22 +247,17 @@ if(isset($_POST['submit_info'])){
 
         <div class="btm2_main">
 
-
-
         <div class="btm2_holder">
 
         <?php dynamic_sidebar('btm2_holder');?>
 
         </div>
 
-
-
-        <div class="btm2_info">
-
-        <?php dynamic_sidebar('btm2_info');?>
-
-        </div>
-
+<section id="image-gallery-section">
+  <div class="zoom-container" style="height: 100vh; overflow: hidden; position: relative;">
+     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80" alt="Image 1" class="zoom-image" />
+  </div>
+</section>
 
 
 
@@ -301,6 +269,8 @@ if(isset($_POST['submit_info'])){
         	<div class="clearfix"></div>
 
     </div>
+
+	
 
 </div>
 

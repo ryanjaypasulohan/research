@@ -18,23 +18,28 @@
     background-position: 0 0;
   }
   
-#mouse-butterfly-container{display: none;} /*please delete this after sa pag implement*/
-
+/*please delete this after sa pag implement*/
+/* #mouse-butterfly-container{display: none;}  */
 /*scroll-stopping zoomable image section*/
- .zoom-section {
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
 
-    .zoom-image {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      transform-origin: center center;
-      will-change: transform;
-    }
+/* Image Zoom Section */
+#image-gallery-section h2{text-align: center; font-size: 25px;}
+#image-gallery-section {
+  position: relative;
+}
 
-    .spacer {
-      height: 100vh;
-    }
+.zoom-container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.zoom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+  will-change: transform;
+    transition: transform 0.3s ease-out;
+  backface-visibility: hidden;
+}

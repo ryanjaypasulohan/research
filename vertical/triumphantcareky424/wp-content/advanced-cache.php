@@ -8,9 +8,9 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'WP_ROCKET_ADVANCED_CACHE', true );
 
-$rocket_path        = '/home/triumphantcareso/public_html/wp-content/plugins/wp-rocket/';
-$rocket_config_path = '/home/triumphantcareso/public_html/wp-content/wp-rocket-config/';
-$rocket_cache_path  = '/home/triumphantcareso/public_html/wp-content/cache/wp-rocket/';
+$rocket_path        = 'D:\xampp\htdocs\research\vertical\triumphantcareky424\wp-content\plugins\wp-rocket/';
+$rocket_config_path = 'D:\xampp\htdocs\research\vertical\triumphantcareky424/wp-content/wp-rocket-config/';
+$rocket_cache_path  = 'D:\xampp\htdocs\research\vertical\triumphantcareky424/wp-content/cache/wp-rocket/';
 
 if (
 	version_compare( phpversion(), '7.2', '<' )

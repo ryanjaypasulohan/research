@@ -194,23 +194,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //scroll-stopping zoomable image section
- document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
 
-      gsap.utils.toArray(".zoom-section").forEach(section => {
-        const image = section.querySelector(".zoom-image");
+  document.querySelectorAll("#image-gallery-section .zoom-container").forEach(container => {
+    const image = container.querySelector(".zoom-image");
 
-        gsap.to(image, {
-          scale: 2,
-          yPercent: -20, // adds a subtle upward parallax
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-            pin: true
-          }
-        });
-      });
-    });
+    gsap.fromTo(image,
+      { scale: 1 },
+      {
+        scale: 2.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "+=300%",       // Longer scroll = longer "stop"
+          scrub: 1.5,
+          pin: true,
+          anticipatePin: 1,
+          // markers: true
+        }
+      }
+    );
+  });
+});
