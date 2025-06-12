@@ -247,15 +247,15 @@ if(isset($_POST['submit_info'])){
 
         <div class="btm2_main">
 
-        <div class="btm2_holder">
+        <!-- <div class="btm2_holder">
 
-        <?php dynamic_sidebar('btm2_holder');?>
+        < ?php dynamic_sidebar('btm2_holder');?>
 
-        </div>
+        </div> -->
 
 <section id="image-gallery-section">
   <div class="zoom-container" style="height: 100vh; overflow: hidden; position: relative;">
-     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80" alt="Image 1" class="zoom-image" />
+     <img class="zoom-image" src="<?php bloginfo('template_url');?>/images/memes/nigu_community.png" alt="nigu community" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"/>
   </div>
 </section>
 

@@ -200,21 +200,41 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("#image-gallery-section .zoom-container").forEach(container => {
     const image = container.querySelector(".zoom-image");
 
-    gsap.fromTo(image,
-      { scale: 1 },
-      {
-        scale: 2.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "+=300%",       // Longer scroll = longer "stop"
-          scrub: 1.5,
-          pin: true,
-          anticipatePin: 1,
-          // markers: true
+    let scrollLocked = false;
+
+    const zoomTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top top",
+        end: "+=200%",
+        scrub: 1.5,
+        pin: true,
+        anticipatePin: 1,
+        // markers: true,
+
+        // Lock scroll when entering
+        onEnter: () => {
+          if (!scrollLocked) {
+            document.body.style.overflow = "hidden";
+            scrollLocked = true;
+          }
+        },
+
+        // Unlock scroll when leaving
+        onLeave: () => {
+          document.body.style.overflow = "";
+          scrollLocked = false;
+        },
+
+        // In case the user scrolls back up
+        onLeaveBack: () => {
+          document.body.style.overflow = "";
+          scrollLocked = false;
         }
       }
-    );
+    });
+
+    // Zoom animation
+    zoomTimeline.fromTo(image, { scale: 1 }, { scale: 2.5, ease: "power2.out" });
   });
 });

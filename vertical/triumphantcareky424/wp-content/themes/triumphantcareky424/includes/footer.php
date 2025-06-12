@@ -125,6 +125,7 @@ Solved HTML5 & CSS IE Issues
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/sprite-animation.js"></script>
 
 <?php wp_footer(); ?>
