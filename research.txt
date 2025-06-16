@@ -1,3 +1,15 @@
 https://docs.google.com/document/d/1-w0zwWvY0v7onOoyrAOnwp2GKkX0LRF0sU_XqRCy1Qs/edit?tab=t.0
 
 https://docs.google.com/document/d/1f-7vbowpEsct7IYfFyREqRIhGiLwlR6AkuGRksx6ltA/edit?usp=sharing
+
+https://docs.google.com/document/d/14jP89j_6Vhkh4nTp0fx6ooDz_QU-_1d4fjZWALY3hYc/edit?usp=sharing
+
+
+
+
+
+
+
+
+GSAP Features
+https://gsap.com/docs/v3/Plugins/ScrollSmoother/

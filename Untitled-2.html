@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .scrolly_image_container {
+  margin: 0;
+  background-color: #1a1721;
+  color: white;
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#gsapScrollyImagewrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#content {
+  overflow: visible;
+  width: 100%;
+}
+
+.text {
+	position: fixed;
+	top: 50vh;
+	font-family: termina, sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	font-size: 8vw;
+	text-align: center;
+	width: 100%;
+	transform: translateY(-100%);
+	z-index: 2;
+	color: #000;
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: #000;
+	z-index: -2;
+}
+
+.outline-text {
+	color: transparent;
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: #000;
+	z-index: 2;
+}
+
+.filter-text {
+	mix-blend-mode: screen;
+	color: #000;
+	z-index: 2;
+}
+
+.images {
+  padding-top: 60vh;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 150vh;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(20, 2%);
+  grid-template-rows: repeat(30, 3%);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.content__slide-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img:nth-child(1) {
+  grid-area: 1/1/6/8;
+}
+
+img:nth-child(2) {
+  grid-area: 3/12/8/20;
+}
+
+img:nth-child(3) {
+  grid-area: 9/5/13/15;
+}
+
+img:nth-child(4) {
+  grid-area: 14/1/18/8;
+}
+
+img:nth-child(5) {
+  grid-area: 16/12/20/19;
+}
+
+img:nth-child(6) {
+  grid-area: 20/2/25/9;
+}
+
+img:nth-child(7) {
+  grid-area: 22/11/24/20;
+}
+
+img:nth-child(8) {
+  grid-area: 26/5/30/15;
+}
+</style>
+<body>
+  
+    <div class="scrolly_image_container">
+
+<h1 class="text">Scrolly Images</h1>
+<h1 aria-hidden="true" class="text outline-text">Scrolly Images</h1>
+<h1 aria-hidden="true" class="text filter-text">Scrolly Images</h1>
+
+<div id="gsapScrollyImagewrapper">
+	<section id="content">
+		<section class="images">
+			<img data-speed="0.8" src="https://images.unsplash.com/photo-1556856425-366d6618905d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+			<img data-speed="0.9" src="https://images.unsplash.com/photo-1520271348391-049dd132bb7c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="">
+			<img data-speed="1" src="https://images.unsplash.com/photo-1609166214994-502d326bafee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="">
+			<img data-speed="1.1" src="https://images.unsplash.com/photo-1589882265634-84f7eb9a3414?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=434&q=80" alt="">
+			<img data-speed="0.9" src="https://images.unsplash.com/photo-1514689832698-319d3bcac5d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=434&q=80" alt="">
+			<img data-speed="1.2" src="https://images.unsplash.com/photo-1535207010348-71e47296838a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="">
+			<img data-speed="0.8" src="https://images.unsplash.com/photo-1588007375246-3ee823ef4851?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+			<img data-speed="1" src="https://images.unsplash.com/photo-1571450669798-fcb4c543f6a4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+		</section>
+	</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollSmoother) 
+    let skewSetter = gsap.quickTo("img", "skewY"), // fast
+	  clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
+
+ScrollSmoother.create({
+	wrapper: "#wrapper",
+	content: "#content",
+	smooth: 2,
+  speed: 3,
+	effects: true,
+	onUpdate: self => skewSetter(clamp(self.getVelocity() / -50)),
+	onStop: () => skewSetter(0)
+});
+
+</script>
+
+</body>
+</html>
