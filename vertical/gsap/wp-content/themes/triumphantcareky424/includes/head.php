@@ -11,38 +11,21 @@
 <!--<![endif]-->
 
 <head>
-
   <meta charset="utf-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-
-
-
   <title><?php echo get_bloginfo('name');?></title>
-
   <link rel="icon" href="<?php bloginfo('template_url');?>/images/favicon.png" />
-
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/style.min.css">
-
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/media.min.css">
-
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/hamburgers.min.css">
-
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/rslides.min.css">
-
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/font-awesome.min.css">
-
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/animations.min.css">
-
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/skitter.styles.min.css">
 
-
-
   <!--Admin Responsive-->
-
-
 
   <?php if ( is_user_logged_in() ) { ?>
 
@@ -148,6 +131,11 @@
 
   <?php }?>
 
+  <?php if (is_front_page()) {?>
+    <style>
+      .main_holder{display: none;}
+    </style>
+  <?php }?>
 
 
   <?php wp_head(); ?>
@@ -159,3 +147,13 @@
   <div class="protect-me">
 
     <div class="clearfix">
+
+<!-- Cursor-following butterfly -->
+<div id="mouse-butterfly-container" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;">
+  <div id="mouse-butterfly" style="
+    width: 121.5px;
+    height: 138.2px;
+    background-image: url('/research/vertical/triumphantcareky424/wp-content/themes/triumphantcareky424/images/sprite/butterfly-flying.png');
+    background-repeat: no-repeat;
+  "></div>
+</div>

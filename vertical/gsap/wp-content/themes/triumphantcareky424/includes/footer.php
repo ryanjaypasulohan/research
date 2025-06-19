@@ -109,6 +109,7 @@ Solved HTML5 & CSS IE Issues
 <script src="<?php bloginfo('template_url');?>/js/plugins.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
+
 <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script> 
 <script>
   // Initialize Lenis
@@ -122,22 +123,75 @@ const lenis = new Lenis({
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
-<script>
-    gsap.registerPlugin(ScrollSmoother) 
-    let skewSetter = gsap.quickTo("#scrolly-image-section .images img"), // fast
-	  clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
 
-ScrollSmoother.create({
-	wrapper: "#scrolly_image_container",
-	content: "#content",
-	smooth: 2,
-  speed: 3,
-	effects: true,
-	onUpdate: self => skewSetter(clamp(self.getVelocity() / -50)),
-	onStop: () => skewSetter(0)
+
+<!-- horizontal scrolling section  -->
+ <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const track = document.querySelector(".image-track");
+    const totalWidth = track.scrollWidth;
+
+    gsap.to(track, {
+      x: () => -(totalWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".horizontal-scroll",
+        start: "top top",
+        end: () => `+=${totalWidth - window.innerWidth}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1
+      }
+    });
+  </script>
+
+<!-- butterfly sprite animation on horizontal scrolling -->
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const butterflyContainer = document.getElementById("butterfly-container");
+
+  // Show/hide butterfly inside horizontal-scroll section
+  ScrollTrigger.create({
+    trigger: ".horizontal-scroll",
+    start: "center bottom",
+    end: "bottom bottom",
+    onEnter: () => butterflyContainer.style.display = "block",
+    onEnterBack: () => butterflyContainer.style.display = "block",
+    onLeave: () => butterflyContainer.style.display = "none",
+    onLeaveBack: () => butterflyContainer.style.display = "none"
+  });
+
+  // Move left/right on scroll direction
+  let lastScroll = window.scrollY;
+
+  ScrollTrigger.create({
+    trigger: ".horizontal-scroll",
+    start: "center bottom",
+    end: "bottom bottom",
+    scrub: true,
+    onUpdate: () => {
+      const currentScroll = window.scrollY;
+      const direction = currentScroll > lastScroll ? 1 : -1;
+      const moveX = direction * 20;
+
+      gsap.to(butterflyContainer, {
+        x: `+=${moveX}`,
+        duration: 0.3,
+        ease: "power1.out"
+      });
+
+      lastScroll = currentScroll;
+    }
+  });
 });
 
 </script>
+
+
+
 <?php wp_footer(); ?>
 
 </body>

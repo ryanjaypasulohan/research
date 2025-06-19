@@ -243,38 +243,20 @@ if(isset($_POST['submit_info'])){
 
 <div id="bottom2">
 
-    <div class="wrapper animatedParent animateOnce">
-
-        <div class="btm2_main">
-
-
-
-        <div class="btm2_holder">
-
-        <?php dynamic_sidebar('btm2_holder');?>
-
-        </div>
-
-
-
-        <div class="btm2_info">
-
-        <?php dynamic_sidebar('btm2_info');?>
-
-        </div>
-
-
-
-
-
-
-
-        </div>
-
-        	<div class="clearfix"></div>
-
+     <section class="horizontal-scroll">
+    <div class="image-track">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Image 1" />
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Image 2" />
+      <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=800&q=80" alt="Image 3" />
+      <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=800&q=80" alt="Image 4" />
     </div>
+  </section>
 
+<!-- butterfly sprite to appear on horizontal scrolling (hidden by default) -->
+
+<div id="butterfly-container">
+  <div id="butterfly"></div>
+</div>
 </div>
 
 

@@ -11,14 +11,14 @@
 <div id="gsapScrollyImagewrapper">
 	<section id="content">
 		<section class="images">
-			<img data-speed="0.8" src="<?php bloginfo('template_url');?>/images/memes/image (1).png" alt="">
-			<img data-speed="0.9" src="<?php bloginfo('template_url');?>/images/memes/image (6).png" alt="">
-			<img data-speed="1" src="<?php bloginfo('template_url');?>/images/memes/johny bawiga 2.0.jpg" alt="">
-			<img data-speed="1.1" src="<?php bloginfo('template_url');?>/images/memes/jonathan-smiling.jpg" alt="">
-			<img data-speed="0.9" src="<?php bloginfo('template_url');?>/images/memes/nikko-rapper.jpg" alt="">
-			<img data-speed="1.2" src="<?php bloginfo('template_url');?>/images/memes/snow-whitey.jpg" alt="">
-			<img data-speed="0.8" src="<?php bloginfo('template_url');?>/images/memes/MicrosoftTeams-image (17).png" alt="">
-			<img data-speed="1" src="<?php bloginfo('template_url');?>/images/memes/hilak-clint-removebg-preview.png" alt="">
+			<img class="skewY" data-speed="0.8" src="<?php bloginfo('template_url');?>/images/memes/image (1).png" alt="">
+			<img class="skewY" data-speed="0.9" src="<?php bloginfo('template_url');?>/images/memes/image (6).png" alt="">
+			<img class="skewY" data-speed="1" src="<?php bloginfo('template_url');?>/images/memes/johny bawiga 2.0.jpg" alt="">
+			<img class="skewY" data-speed="1.1" src="<?php bloginfo('template_url');?>/images/memes/jonathan-smiling.jpg" alt="">
+			<img class="skewY" data-speed="0.9" src="<?php bloginfo('template_url');?>/images/memes/nikko-rapper.jpg" alt="">
+			<img class="skewY" data-speed="1.2" src="<?php bloginfo('template_url');?>/images/memes/snow-whitey.jpg" alt="">
+			<img class="skewY" data-speed="0.8" src="<?php bloginfo('template_url');?>/images/memes/MicrosoftTeams-image (17).png" alt="">
+			<img class="skewY" data-speed="1" src="<?php bloginfo('template_url');?>/images/memes/hilak-clint-removebg-preview.png" alt="">
 		</section>
 	</section>
 </div>

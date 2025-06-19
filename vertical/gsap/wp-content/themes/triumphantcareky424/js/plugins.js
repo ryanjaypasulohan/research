@@ -415,3 +415,37 @@ $(document).ready(function () {
     }
   });
 });
+
+
+//Cursor-Following Butterfly Sprite Animation
+$(function () {
+  const $container = $("#mouse-butterfly-container");
+  const $sprite = $("#mouse-butterfly");
+  const fw = 121.5, fh = 138.2, frames = 10, cols = 5;
+  let frame = 0, lastX = null, angle = 0;
+  // Wing animation
+setInterval(() => {
+    const x = -(frame % cols) * fw;
+    const y = -Math.floor(frame / cols) * fh;
+    $sprite.css("background-position", `${x}px ${y}px`);
+    frame = (frame + 1) % frames;
+  }, 100);
+  // Mouse follow and flip
+  $(document).on("mousemove", e => {
+    const x = e.clientX - fw / 2, y = e.clientY - fh / 2;
+    if (lastX !== null) $sprite.css("transform", `scaleX(${x > lastX ? -1 : 1})`);
+    lastX = x;
+    gsap.to($container, { x, y, duration: 0.5, ease: "power2.out" });
+  });
+  // Idle float if no mouse movement
+  const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+  (function float() {
+    if (lastX === null) {
+      angle += 0.03;
+      const x = cx + Math.cos(angle) * 30;
+      const y = cy + Math.sin(angle * 1.5) * 20;
+      $container.css("transform", `translate(${x}px, ${y}px) scaleX(1)`);
+    }
+    requestAnimationFrame(float);
+  })();
+});
