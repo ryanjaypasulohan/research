@@ -124,10 +124,34 @@ const lenis = new Lenis({
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
 
+<?php if (is_front_page()) { ?>
+ 
+<!-- Scroll Images -->
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+     gsap.registerPlugin(ScrollSmoother)
+    let skewSetter = gsap.quickTo("#content img", "skewY"), // fast
+    clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
 
+ScrollSmoother.create({
+  wrapper: "#wrapper",
+  content: "#content",
+  smooth: 2,
+  speed: 3,
+  effects: true,
+  onUpdate: self => skewSetter(clamp(self.getVelocity() / -50)),
+  onStop: () => skewSetter(0)
+});
+});
+
+</script>
+<?php } ?>
+<?php if (is_page(402)) { ?>
+ 
 <!-- horizontal scrolling section  -->
  <script>
-    gsap.registerPlugin(ScrollTrigger);
+   document.addEventListener("DOMContentLoaded", () => {
+     gsap.registerPlugin(ScrollTrigger);
 
     const track = document.querySelector(".image-track");
     const totalWidth = track.scrollWidth;
@@ -144,7 +168,12 @@ const lenis = new Lenis({
         anticipatePin: 1
       }
     });
+   });
   </script>
+<?php } ?>
+
+
+
 
 <!-- butterfly sprite animation on horizontal scrolling -->
 <script>
