@@ -986,8 +986,8 @@ if ($defaultPage)
 wp_delete_post( $defaultPage->ID, $bypass_trash = true );
 
 // $defaultPage1 = get_page_by_title( 'Privacy Policy' );
-if ($defaultPage1)
-wp_delete_post( $defaultPage1->ID, $bypass_trash = true );
+// if ($defaultPage1)
+// wp_delete_post( $defaultPage1->ID, $bypass_trash = true );
 
 function check_pages_live(){
 			 if(get_page_by_title( 'Home' ) == NULL) {
