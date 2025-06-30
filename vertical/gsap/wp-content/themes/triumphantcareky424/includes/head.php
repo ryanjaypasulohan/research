@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/animations.min.css">
   <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/skitter.styles.min.css">
-
+<link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
   <!--Admin Responsive-->
 
   <?php if ( is_user_logged_in() ) { ?>
@@ -127,6 +127,8 @@
     padding: 0;
     width: 100%;
   }
+
+
   </style>
 
   <?php }?>

@@ -149,11 +149,11 @@ ScrollSmoother.create({
 <?php if (is_page(402)) { ?>
  
 <!-- horizontal scrolling section  -->
- <script>
-   document.addEventListener("DOMContentLoaded", () => {
-     gsap.registerPlugin(ScrollTrigger);
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
 
-    const track = document.querySelector(".image-track");
+    const track = document.querySelector(".horizontal-scroll-container");
     const totalWidth = track.scrollWidth;
 
     gsap.to(track, {
@@ -168,56 +168,10 @@ ScrollSmoother.create({
         anticipatePin: 1
       }
     });
-   });
-  </script>
-<?php } ?>
-
-
-
-
-<!-- butterfly sprite animation on horizontal scrolling -->
-<script>
- document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const butterflyContainer = document.getElementById("butterfly-container");
-
-  // Show/hide butterfly inside horizontal-scroll section
-  ScrollTrigger.create({
-    trigger: ".horizontal-scroll",
-    start: "center bottom",
-    end: "bottom bottom",
-    onEnter: () => butterflyContainer.style.display = "block",
-    onEnterBack: () => butterflyContainer.style.display = "block",
-    onLeave: () => butterflyContainer.style.display = "none",
-    onLeaveBack: () => butterflyContainer.style.display = "none"
   });
-
-  // Move left/right on scroll direction
-  let lastScroll = window.scrollY;
-
-  ScrollTrigger.create({
-    trigger: ".horizontal-scroll",
-    start: "center bottom",
-    end: "bottom bottom",
-    scrub: true,
-    onUpdate: () => {
-      const currentScroll = window.scrollY;
-      const direction = currentScroll > lastScroll ? 1 : -1;
-      const moveX = direction * 20;
-
-      gsap.to(butterflyContainer, {
-        x: `+=${moveX}`,
-        duration: 0.3,
-        ease: "power1.out"
-      });
-
-      lastScroll = currentScroll;
-    }
-  });
-});
-
 </script>
+
+<?php } ?>
 
 
 

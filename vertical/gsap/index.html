@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chaotic Locomotive Scroll</title>
+
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    #bottom1 {
+      background: #111;
+      color: #fff;
+    }
+
+    [data-scroll-container] {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dummy-top {
+      height: 100vh;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3vw;
+    }
+
+    .line-wrapper {
+      position: relative;
+      width: 100vw;
+      margin: 18vh 0;
+      overflow: visible;
+    }
+
+    .text-line {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 2vh 5vw;
+      font-size: 10vw;
+      font-weight: 800;
+      background: white;
+      line-height: 1;
+      color: #111;
+    }
+
+    /* Rotating wrappers */
+    .l1 { transform: rotate(-15deg); }
+    .l2 { transform: rotate(20deg); }
+    .l3 { transform: rotate(-10deg); }
+    .l4 { transform: rotate(25deg); }
+    .l5 { transform: rotate(-18deg); }
+    .l6 { transform: rotate(12deg); }
+    .l7 { transform: rotate(-8deg); }
+    .l8 { transform: rotate(22deg); }
+    .l9 { transform: rotate(-5deg); }
+    .l10 { transform: rotate(15deg); }
+  </style>
+</head>
+<body>
+
+  <div id="bottom1">
+    <div data-scroll-container>
+
+      <!-- Dummy content above -->
+      <div class="dummy-top" data-scroll-section>
+        Welcome to Chaos Mode
+      </div>
+
+      <!-- Chaotic text lines -->
+      <div data-scroll-section><div class="line-wrapper l1"><div class="text-line" data-scroll data-scroll-speed="12" data-scroll-direction="horizontal">CLINT SEPALON KUPAL</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l2"><div class="text-line" data-scroll data-scroll-speed="-10" data-scroll-direction="horizontal">NIKOBOI</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l3"><div class="text-line" data-scroll data-scroll-speed="15" data-scroll-direction="horizontal">JHONNY ROGINE</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l4"><div class="text-line" data-scroll data-scroll-speed="-14" data-scroll-direction="horizontal">ATAN GAMING</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l5"><div class="text-line" data-scroll data-scroll-speed="20" data-scroll-direction="horizontal">RYANN CRAZYY</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l6"><div class="text-line" data-scroll data-scroll-speed="-18" data-scroll-direction="horizontal">MASTER CEDIEEEEE</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l7"><div class="text-line" data-scroll data-scroll-speed="10" data-scroll-direction="horizontal">CLINT KUPAL</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l8"><div class="text-line" data-scroll data-scroll-speed="-20" data-scroll-direction="horizontal">WHO MADE THIS???</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l9"><div class="text-line" data-scroll data-scroll-speed="16" data-scroll-direction="horizontal">MADNESS!!</div></div></div>
+      <div data-scroll-section><div class="line-wrapper l10"><div class="text-line" data-scroll data-scroll-speed="-22" data-scroll-direction="horizontal">CHAOS UNLEASHED</div></div></div>
+
+    </div>
+  </div>
+
+  <!-- Locomotive Scroll JS -->
+  <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      inertia: 0.25
+    });
+  </script>
+
+</body>
+</html>
